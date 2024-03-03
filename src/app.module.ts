@@ -1,5 +1,7 @@
+import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { TerminusModule } from '@nestjs/terminus';
 import { join } from 'path';
 import { AppController } from './app.controller';
 
@@ -8,6 +10,8 @@ import { AppController } from './app.controller';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'client'),
     }),
+    TerminusModule,
+    HttpModule,
   ],
   controllers: [AppController],
 })
