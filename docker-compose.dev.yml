@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  static-server-ecs-study-study:
+    container_name: static-server-ecs-study-study
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    ports:
+      - 3000:3000
